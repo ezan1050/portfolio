@@ -12,4 +12,9 @@
   /* Textes */
   --color-cyber-text: #E6EDF3;
   --color-cyber-muted: #8B95A7;
+
+  /* Polices */
+  --font-display: "Space Grotesk Variable", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
 }
