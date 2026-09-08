@@ -18,3 +18,14 @@
   --font-body: "IBM Plex Sans", sans-serif;
   --font-mono: "JetBrains Mono Variable", monospace;
 }
+
+@layer base 
+{
+ body
+ {
+    background-color: var(--color-cyber-bg);
+    color: var(--color-cyber-text);
+    font-family: var(--font-body);
+ }
+
+}
