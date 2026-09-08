@@ -3,16 +3,34 @@
 
     <!-- Logo / Nom -->
     <a href="#" class="font-display text-xl font-bold text-cyber-text">
-      Ezan Bhatti<span class="text-cyber-cyan">.</span>
+      Ezan<span class="text-cyber-cyan">.</span>
     </a>
 
-    <!-- Liens de navigation -->
-    <ul class="flex items-center gap-8 font-mono text-sm">
+    <!-- Liens desktop : cachés sur mobile, visibles à partir de md -->
+    <ul class="hidden md:flex items-center gap-8 font-mono text-sm">
       <li><a href="#about" class="text-cyber-muted hover:text-cyber-cyan transition-colors">About</a></li>
       <li><a href="#skills" class="text-cyber-muted hover:text-cyber-cyan transition-colors">Skills</a></li>
       <li><a href="#projects" class="text-cyber-muted hover:text-cyber-cyan transition-colors">Projects</a></li>
       <li><a href="#contact" class="text-cyber-muted hover:text-cyber-cyan transition-colors">Contact</a></li>
     </ul>
 
+    <!-- Bouton burger : visible sur mobile, caché à partir de md -->
+    <button
+      (click)="toggleMenu()"
+      class="md:hidden text-cyber-text text-2xl"
+      aria-label="Toggle navigation menu">
+      ☰
+    </button>
+
   </div>
+
+  <!-- Menu mobile déroulant : affiché seulement si isMenuOpen est vrai -->
+  @if (isMenuOpen()) {
+    <ul class="md:hidden flex flex-col gap-4 px-6 pb-6 font-mono text-sm border-t border-cyber-cyan/15">
+      <li><a href="#about" (click)="toggleMenu()" class="text-cyber-muted hover:text-cyber-cyan transition-colors">About</a></li>
+      <li><a href="#skills" (click)="toggleMenu()" class="text-cyber-muted hover:text-cyber-cyan transition-colors">Skills</a></li>
+      <li><a href="#projects" (click)="toggleMenu()" class="text-cyber-muted hover:text-cyber-cyan transition-colors">Projects</a></li>
+      <li><a href="#contact" (click)="toggleMenu()" class="text-cyber-muted hover:text-cyber-cyan transition-colors">Contact</a></li>
+    </ul>
+  }
 </nav>
