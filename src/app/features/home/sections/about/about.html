@@ -1,0 +1,29 @@
+<section id="about" appScrollReveal class="max-w-5xl mx-auto px-6 py-20">
+
+  <h2 class="font-display text-3xl md:text-4xl font-bold text-cyber-text mb-2">
+    About
+  </h2>
+  <p class="font-mono text-cyber-cyan text-sm mb-10">
+    // who I am
+  </p>
+
+  <!-- Intro -->
+  <p class="font-body text-base md:text-lg text-cyber-muted max-w-3xl mb-12 leading-relaxed">
+    {{ intro }}
+  </p>
+
+  <!-- Points clés -->
+  <div class="grid gap-6 md:grid-cols-2">
+    @for (item of highlights; track item.title) {
+      <div class="bg-cyber-surface/50 border border-cyber-cyan/15 rounded-xl p-6">
+        <h3 class="font-display text-lg text-cyber-cyan mb-2">
+          {{ item.title }}
+        </h3>
+        <p class="font-body text-sm text-cyber-muted leading-relaxed">
+          {{ item.description }}
+        </p>
+      </div>
+    }
+  </div>
+
+</section>
