@@ -1,0 +1,48 @@
+<section id="certifications" appScrollReveal class="max-w-5xl mx-auto px-6 py-20">
+
+  <h2 class="font-display text-3xl md:text-4xl font-bold text-cyber-text mb-2">
+    Certifications
+  </h2>
+  <p class="font-mono text-cyber-cyan text-sm mb-10">
+    // credentials & achievements
+  </p>
+
+  <div class="grid gap-6 md:grid-cols-2">
+
+    @for (cert of certList; track cert.name) {
+
+      @if (cert.status === 'earned') {
+        <!-- Certification obtenue -->
+        <div class="bg-cyber-surface/50 border border-cyber-cyan/30 rounded-xl p-6 flex flex-col">
+          <div class="flex items-start justify-between mb-2">
+            <h3 class="font-display text-lg text-cyber-text">{{ cert.name }}</h3>
+            <span class="font-mono text-xs text-cyber-cyan">✓</span>
+          </div>
+          <p class="font-mono text-sm text-cyber-muted mb-1">{{ cert.issuer }}</p>
+          <p class="font-mono text-xs text-cyber-muted mb-4">{{ cert.date }}</p>
+          @if (cert.verifyUrl) {
+            <a [href]="cert.verifyUrl" target="_blank" rel="noopener noreferrer"
+               class="font-mono text-sm text-cyber-cyan hover:underline mt-auto">
+              Verify →
+            </a>
+          }
+        </div>
+      } @else {
+        <!-- Certification en cours (verrouillée) -->
+        <div class="bg-cyber-surface/20 border border-dashed border-cyber-muted/30 rounded-xl p-6 flex flex-col opacity-60">
+          <div class="flex items-start justify-between mb-2">
+            <h3 class="font-display text-lg text-cyber-muted">{{ cert.name }}</h3>
+            <span class="font-mono text-xs text-cyber-muted">🔒</span>
+          </div>
+          <p class="font-mono text-sm text-cyber-muted mb-1">{{ cert.issuer }}</p>
+          <p class="font-mono text-xs text-cyber-cyan/70 uppercase tracking-wider">
+            {{ cert.date }}
+          </p>
+        </div>
+      }
+
+    }
+
+  </div>
+
+</section>
