@@ -1,0 +1,41 @@
+<section id="experience" appScrollReveal class="max-w-5xl mx-auto px-6 py-20">
+
+  <h2 class="font-display text-3xl md:text-4xl font-bold text-cyber-text mb-2">
+    Experience
+  </h2>
+  <p class="font-mono text-cyber-cyan text-sm mb-10">
+    // career path
+  </p>
+
+  <!-- Conteneur de la timeline : la bordure gauche fait la ligne verticale -->
+  <div class="relative border-l border-cyber-cyan/20 ml-3">
+
+    @for (exp of experienceList; track exp.company) {
+      <div class="relative pl-8 pb-10 last:pb-0">
+
+        <!-- Le point sur la ligne -->
+        <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-cyber-cyan"></span>
+
+        <!-- Poste + entreprise -->
+        <h3 class="font-display text-lg text-cyber-text">{{ exp.role }}</h3>
+        <p class="font-mono text-sm text-cyber-cyan mb-1">{{ exp.company }}</p>
+
+        <!-- Période -->
+        <p class="font-mono text-xs text-cyber-muted mb-3">{{ exp.period }}</p>
+
+        <!-- Points clés -->
+        <ul class="space-y-1">
+          @for (point of exp.highlights; track point) {
+            <li class="font-body text-sm text-cyber-muted flex gap-2">
+              <span class="text-cyber-cyan">▹</span>
+              <span>{{ point }}</span>
+            </li>
+          }
+        </ul>
+
+      </div>
+    }
+
+  </div>
+
+</section>
