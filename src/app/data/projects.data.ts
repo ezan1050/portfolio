@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     slug: 'developer-portfolio',
     name: 'Developer Portfolio',
-    shortDescription: 'This very website — a cyberpunk-themed developer portfolio built with Angular, TypeScript, and Tailwind CSS.',
+    shortDescription: 'A website portfolio built with Angular, TypeScript, and Tailwind CSS.',
     technologies: ['Angular', 'TypeScript', 'Tailwind CSS', 'SSR'],
     githubUrl: 'https://github.com/ezan1050/portfolio',
 

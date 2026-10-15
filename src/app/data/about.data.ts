@@ -1,7 +1,7 @@
 import { AboutHighlight } from '../models/about.model';
 
 export const aboutIntro =
-  "I didn't start in tech. After earning my diploma in accounting, I realized my real interest was elsewhere — sparked by my passion for video games, I made the switch to IT. The path wasn't straight, but every step taught me persistence and a hands-on way of learning.";
+  "After earning my diploma in accounting, I realized my real interest was elsewhere, I made the switch to IT. The path wasn't straight, but every step taught me persistence and a hands-on way of learning.";
 
 export const aboutHighlights: AboutHighlight[] = [
   {
