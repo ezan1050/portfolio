@@ -5,10 +5,11 @@ import { About } from '../sections/about/about';
 import { Projects } from '../sections/projects/projects';
 import { Certifications } from "../sections/certifications/certifications";
 import { Experience } from "../sections/experience/experience";
+import { Contact } from "../sections/contact/contact";
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, Skills, About, Experience, Projects, Certifications],
+  imports: [Hero, Skills, About, Experience, Projects, Certifications, Contact],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
