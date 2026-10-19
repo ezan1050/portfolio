@@ -1,0 +1,83 @@
+@if (project) {
+
+  <article class="max-w-4xl mx-auto px-6 py-20">
+
+    <!-- Retour -->
+    <a href="/#projects" class="font-mono text-sm text-cyber-cyan hover:underline">
+      ← Back to projects
+    </a>
+
+    <!-- En-tête -->
+    <h1 class="font-display text-3xl md:text-5xl font-bold text-cyber-text mt-6 mb-4">
+      {{ project.name }}
+    </h1>
+
+    <!-- Technologies -->
+    <div class="flex flex-wrap gap-2 mb-6">
+      @for (tech of project.technologies; track tech) {
+        <span class="font-mono text-xs text-cyber-muted bg-cyber-surface border border-cyber-cyan/20 rounded-md px-3 py-1">
+          {{ tech }}
+        </span>
+      }
+    </div>
+
+    <!-- Liens -->
+    <div class="flex gap-4 font-mono text-sm mb-12">
+      <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer"
+         class="text-cyber-cyan hover:underline">GitHub</a>
+      @if (project.liveUrl) {
+        <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer"
+           class="text-cyber-cyan hover:underline">Live Demo</a>
+      }
+    </div>
+
+    <!-- Sections de détail -->
+    <div class="space-y-10">
+
+      <section>
+        <h2 class="font-mono text-cyber-cyan text-sm mb-2">// problem</h2>
+        <p class="font-body text-cyber-muted leading-relaxed">{{ project.problem }}</p>
+      </section>
+
+      <section>
+        <h2 class="font-mono text-cyber-cyan text-sm mb-2">// objective</h2>
+        <p class="font-body text-cyber-muted leading-relaxed">{{ project.objective }}</p>
+      </section>
+
+      <section>
+        <h2 class="font-mono text-cyber-cyan text-sm mb-3">// features</h2>
+        <ul class="space-y-2">
+          @for (feature of project.features; track feature) {
+            <li class="font-body text-cyber-muted flex gap-2">
+              <span class="text-cyber-cyan">▹</span>
+              <span>{{ feature }}</span>
+            </li>
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-mono text-cyber-cyan text-sm mb-2">// challenges</h2>
+        <p class="font-body text-cyber-muted leading-relaxed">{{ project.challenges }}</p>
+      </section>
+
+      <section>
+        <h2 class="font-mono text-cyber-cyan text-sm mb-2">// what I learned</h2>
+        <p class="font-body text-cyber-muted leading-relaxed">{{ project.learnings }}</p>
+      </section>
+
+    </div>
+
+  </article>
+
+} @else {
+
+  <!-- Projet introuvable -->
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h1 class="font-display text-2xl text-cyber-text mb-4">Project not found</h1>
+    <a href="/#projects" class="font-mono text-sm text-cyber-cyan hover:underline">
+      ← Back to projects
+    </a>
+  </div>
+
+}

@@ -12,9 +12,12 @@
     @for (project of projectList; track project.slug) {
       <div class="bg-cyber-surface/50 border border-cyber-cyan/15 rounded-xl p-6 flex flex-col">
 
-        <h3 class="font-display text-xl text-cyber-text mb-2">
-          {{ project.name }}
-        </h3>
+        <h3 class="font-display text-xl mb-2">
+  <a [routerLink]="['/projects', project.slug]"
+     class="text-cyber-text hover:text-cyber-cyan transition-colors">
+    {{ project.name }}
+  </a>
+</h3>
 
         <p class="font-body text-sm text-cyber-muted mb-4 flex-grow">
           {{ project.shortDescription }}
