@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource/ibm-plex-sans';
+
 @theme {
   /* Fonds */
   --color-cyber-bg: #0A0E17;
